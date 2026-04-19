@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*.bak
+.env
+.idea
+.vscode
+node_modules
+__pycache__
