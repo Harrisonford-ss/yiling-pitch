@@ -808,12 +808,14 @@ html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
 /* ============ 第 11 页：最终成片 ============ */
 .slide-11 { background: #000; }
 .slide-11 .body {
-    padding: 0; flex: 1; position: relative;
+    padding: clamp(5rem, 9vh, 7rem) clamp(2rem, 4vw, 3rem) clamp(3rem, 5vh, 5rem);
+    flex: 1; position: relative;
     display: flex; align-items: center; justify-content: center;
     overflow: visible;
 }
 .final-video-container {
-    width: 90%; max-width: 1400px; aspect-ratio: 16/9;
+    width: 90%; max-width: 1300px; aspect-ratio: 16/9;
+    max-height: calc(100vh - 14rem);
     position: relative;
     box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1);
     border-radius: 8px; overflow: hidden;
@@ -860,7 +862,7 @@ html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
     margin-top: 0.4rem;
 }
 .play-stats {
-    position: absolute; right: clamp(1rem, 2vw, 1.5rem); top: clamp(1rem, 2vw, 1.5rem);
+    position: absolute; right: clamp(2rem, 4vw, 3rem); top: clamp(1.5rem, 3vw, 2rem);
     display: flex; gap: 0.8rem; z-index: 6;
 }
 .play-stat {
@@ -1792,6 +1794,25 @@ window.CDN_VIDEO_URL = "https://yiling-1253579791.cos.ap-shanghai.myqcloud.com/f
         <div class="play-subtitle">CLICK TO PLAY · 5'03"</div>
     </div>
 
+    <div class="play-stats">
+        <div class="play-stat">
+            <div class="play-stat-num">5:03</div>
+            <div class="play-stat-label">Duration</div>
+        </div>
+        <div class="play-stat">
+            <div class="play-stat-num">944×544</div>
+            <div class="play-stat-label">Resolution</div>
+        </div>
+        <div class="play-stat">
+            <div class="play-stat-num">30 fps</div>
+            <div class="play-stat-label">Frame Rate</div>
+        </div>
+        <div class="play-stat">
+            <div class="play-stat-num">H.264</div>
+            <div class="play-stat-label">Codec</div>
+        </div>
+    </div>
+
     <div class="body">
         <div class="final-video-container">
             <video id="finalVideo" preload="metadata" controls playsinline poster="">
@@ -1799,24 +1820,6 @@ window.CDN_VIDEO_URL = "https://yiling-1253579791.cos.ap-shanghai.myqcloud.com/f
             </video>
             <div class="final-video-overlay" id="videoOverlay">
                 <div class="play-button"></div>
-            </div>
-            <div class="play-stats">
-                <div class="play-stat">
-                    <div class="play-stat-num">5:03</div>
-                    <div class="play-stat-label">Duration</div>
-                </div>
-                <div class="play-stat">
-                    <div class="play-stat-num">944×544</div>
-                    <div class="play-stat-label">Resolution</div>
-                </div>
-                <div class="play-stat">
-                    <div class="play-stat-num">30 fps</div>
-                    <div class="play-stat-label">Frame Rate</div>
-                </div>
-                <div class="play-stat">
-                    <div class="play-stat-num">H.264</div>
-                    <div class="play-stat-label">Codec</div>
-                </div>
             </div>
         </div>
     </div>
