@@ -614,7 +614,8 @@ html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
     max-height: clamp(280px, 40vh, 400px);
 }
 .compare-image img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    background: #14141a;
 }
 .compare-image video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .compare-caption {
@@ -859,12 +860,17 @@ html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
     margin-top: 0.4rem;
 }
 .play-stats {
-    position: absolute; right: clamp(2rem, 4vw, 3rem); bottom: clamp(1.5rem, 3vw, 2rem);
+    position: absolute; right: clamp(2rem, 4vw, 3rem); top: clamp(1.5rem, 3vw, 2rem);
     display: flex; gap: 2rem; z-index: 6;
 }
 .play-stat {
     text-align: right;
     font-family: 'Inter', sans-serif;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.08);
 }
 .play-stat-num {
     font-weight: 200; font-size: clamp(1rem, 1.5vw, 1.4rem); color: #fff;
