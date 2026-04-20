@@ -860,16 +860,16 @@ html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
     margin-top: 0.4rem;
 }
 .play-stats {
-    position: absolute; right: clamp(2rem, 4vw, 3rem); top: clamp(1.5rem, 3vw, 2rem);
-    display: flex; gap: 2rem; z-index: 6;
+    position: absolute; right: clamp(1rem, 2vw, 1.5rem); top: clamp(1rem, 2vw, 1.5rem);
+    display: flex; gap: 0.8rem; z-index: 6;
 }
 .play-stat {
     text-align: right;
     font-family: 'Inter', sans-serif;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.55);
     backdrop-filter: blur(10px);
-    padding: 0.5rem 0.8rem;
-    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 3px;
     border: 1px solid rgba(255,255,255,0.08);
 }
 .play-stat-num {
@@ -1800,25 +1800,24 @@ window.CDN_VIDEO_URL = "https://yiling-1253579791.cos.ap-shanghai.myqcloud.com/f
             <div class="final-video-overlay" id="videoOverlay">
                 <div class="play-button"></div>
             </div>
-        </div>
-    </div>
-
-    <div class="play-stats">
-        <div class="play-stat">
-            <div class="play-stat-num">5:03</div>
-            <div class="play-stat-label">Duration</div>
-        </div>
-        <div class="play-stat">
-            <div class="play-stat-num">944×544</div>
-            <div class="play-stat-label">Resolution</div>
-        </div>
-        <div class="play-stat">
-            <div class="play-stat-num">30 fps</div>
-            <div class="play-stat-label">Frame Rate</div>
-        </div>
-        <div class="play-stat">
-            <div class="play-stat-num">H.264</div>
-            <div class="play-stat-label">Codec</div>
+            <div class="play-stats">
+                <div class="play-stat">
+                    <div class="play-stat-num">5:03</div>
+                    <div class="play-stat-label">Duration</div>
+                </div>
+                <div class="play-stat">
+                    <div class="play-stat-num">944×544</div>
+                    <div class="play-stat-label">Resolution</div>
+                </div>
+                <div class="play-stat">
+                    <div class="play-stat-num">30 fps</div>
+                    <div class="play-stat-label">Frame Rate</div>
+                </div>
+                <div class="play-stat">
+                    <div class="play-stat-num">H.264</div>
+                    <div class="play-stat-label">Codec</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
