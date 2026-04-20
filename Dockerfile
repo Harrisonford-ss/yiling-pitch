@@ -5,6 +5,7 @@ COPY index.html /srv/
 COPY refs /srv/refs/
 COPY scene_07 /srv/scene_07/
 COPY scene_15 /srv/scene_15/
+COPY evolution /srv/evolution/
 
 # Caddyfile - 监听 8080（Zeabur 默认）
 RUN echo ':8080 {' > /etc/caddy/Caddyfile && \
