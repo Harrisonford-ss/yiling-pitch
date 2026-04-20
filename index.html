@@ -633,14 +633,26 @@ html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
     flex: 1;
 }
 .evolution-card {
-    display: flex; flex-direction: column; gap: 0.8rem;
+    display: flex; flex-direction: column; gap: 0;
     background: var(--bg-soft); border: 1px solid var(--border);
-    border-radius: 8px; padding: clamp(0.8rem, 1.5vw, 1.2rem);
-    position: relative;
+    border-radius: 8px; padding: 0;
+    position: relative; overflow: hidden;
+}
+.evolution-image {
+    width: 100%; aspect-ratio: 16/9; overflow: hidden;
+    background: #000; position: relative;
+}
+.evolution-image img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.evolution-content {
+    display: flex; flex-direction: column; gap: 0.6rem;
+    padding: clamp(0.8rem, 1.5vw, 1.2rem);
+    flex: 1;
 }
 .evolution-card.final { border-color: rgba(74,222,128,0.4); }
 .evolution-card.final::before {
-    content: "FINAL"; position: absolute; top: -10px; right: 12px;
+    content: "FINAL"; position: absolute; top: 10px; right: 12px;
     background: #4ade80; color: #000;
     font-family: 'JetBrains Mono', monospace;
     font-size: clamp(0.55rem, 0.7vw, 0.65rem);
@@ -1570,37 +1582,52 @@ window.CDN_VIDEO_URL = "https://yiling-1253579791.cos.ap-shanghai.myqcloud.com/f
     <div class="body">
         <div class="evolution-grid">
             <div class="evolution-card">
-                <div class="evolution-version">VERSION 1 · 含蓄</div>
-                <div class="evolution-title">脱力松手</div>
-                <div class="evolution-quote">
-                    "张飞拿起酒碗，<br>
-                    指尖刚碰到旁边的酒碗，<br>
-                    忽然脱力松手，<br>
-                    清酒洒出彻底打湿了军令"
+                <div class="evolution-image">
+                    <img src="evolution/v1-subtle.jpg" alt="V1 含蓄版">
                 </div>
-                <div class="evolution-result bad">✕ 观众完全看不懂</div>
+                <div class="evolution-content">
+                    <div class="evolution-version">VERSION 1 · 含蓄</div>
+                    <div class="evolution-title">脱力松手</div>
+                    <div class="evolution-quote">
+                        "张飞拿起酒碗，<br>
+                        指尖刚碰到旁边的酒碗，<br>
+                        忽然脱力松手，<br>
+                        清酒洒出彻底打湿了军令"
+                    </div>
+                    <div class="evolution-result bad">✕ 观众完全看不懂</div>
+                </div>
             </div>
             <div class="evolution-card">
-                <div class="evolution-version">VERSION 2 · 文言</div>
-                <div class="evolution-title">是夜遇害</div>
-                <div class="evolution-quote">
-                    "是夜，<br>
-                    张飞被麾下叛将所害，<br>
-                    叛将连夜逃往东吴请降。"<br>
-                    <span style="color: var(--text-faint); font-size: 0.85em;">（旁白文言，画面仍含蓄）</span>
+                <div class="evolution-image">
+                    <img src="evolution/v2-literary.jpg" alt="V2 文言版">
                 </div>
-                <div class="evolution-result ok">⚠ 旁白懂了，画面还是不够直白</div>
+                <div class="evolution-content">
+                    <div class="evolution-version">VERSION 2 · 文言</div>
+                    <div class="evolution-title">是夜遇害</div>
+                    <div class="evolution-quote">
+                        "是夜，<br>
+                        张飞被麾下叛将所害，<br>
+                        叛将连夜逃往东吴请降。"<br>
+                        <span style="color: var(--text-faint); font-size: 0.85em;">（旁白文言，画面仍含蓄）</span>
+                    </div>
+                    <div class="evolution-result ok">⚠ 旁白懂了，画面还是不够直白</div>
+                </div>
             </div>
             <div class="evolution-card final">
-                <div class="evolution-version">VERSION 3 · 大白话</div>
-                <div class="evolution-title">直接讲清楚</div>
-                <div class="evolution-quote">
-                    "当晚，被张飞下了死命令的<br>
-                    两个部下，趁他醉酒没有防备<br>
-                    暗下杀手，之后连夜往东吴<br>
-                    方向逃去。"
+                <div class="evolution-image">
+                    <img src="evolution/v3-plain.jpg" alt="V3 大白话版 FINAL">
                 </div>
-                <div class="evolution-result good">✓ 配合后续侍臣报信，逻辑闭环</div>
+                <div class="evolution-content">
+                    <div class="evolution-version">VERSION 3 · 大白话</div>
+                    <div class="evolution-title">直接讲清楚</div>
+                    <div class="evolution-quote">
+                        "当晚，被张飞下了死命令的<br>
+                        两个部下，趁他醉酒没有防备<br>
+                        暗下杀手，之后连夜往东吴<br>
+                        方向逃去。"
+                    </div>
+                    <div class="evolution-result good">✓ 配合后续侍臣报信，逻辑闭环</div>
+                </div>
             </div>
         </div>
 
